@@ -2,22 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Person List</title>
+    <title>Liste de véhicules</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<h1>Person List</h1>
-<a href="addPerson">Add Person</a>
+<h1>Liste des véhicules</h1>
+<a th:href="@{/ajouterVehicule}">Ajouter un véhicule</a>
 <br/><br/>
 <div>
     <table border="1">
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Id</th>
+            <th>Marque</th>
+            <th>Modèle</th>
+            <th>Modèle</th>
         </tr>
-        <tr th:each ="person : ${persons}">
-            <td th:utext="${person.firstName}">...</td>
-            <td th:utext="${person.lastName}">...</td>
+        <tr th:each ="vehicule : ${vehicules}">
+            <td th:utext="${vehicule.getId()}">...</td>
+            <td th:utext="${vehicule.getMarque()}">...</td>
+            <td th:utext="${vehicule.getModele()}">...</td>
+            <td th:utext="${vehicule.getPrix()}">...</td>
         </tr>
     </table>
 </div>

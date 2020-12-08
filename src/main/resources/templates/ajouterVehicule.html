@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Add Person</title>
+    <title>Créer un véhicule</title>
 <!--    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>-->
 </head>
 <body>
@@ -14,25 +14,31 @@
    would be @{/edit.html}
    -->
 
-<form th:action="@{/addPerson}"
-      th:object="${personForm}" method="POST">
-    First Name:
-    <input type="text" th:field="*{firstName}" />
+<form th:action="@{/ajouterVehicule}"
+      th:object="${vehiculeForm}" method="POST">
+    Id:
+    <input type="number" th:field="*{id}" />
     <br/>
-    Last Name:
-    <input type="text" th:field="*{lastName}" />
+    Marque:
+    <input type="text" th:field="*{marque}" />
     <br/>
-    <input type="submit" value="Create" />
+    Modèle:
+    <input type="text" th:field="*{modele}" />
+    <br/>
+    Prix:
+    <input type="number" th:field="*{prix}" />
+    <br/>
+    <input type="submit" value="Créer" />
 </form>
 
 <br/>
 
 <!-- Check if errorMessage is not null and not empty -->
 
-<div th:if="${errorMessage}" th:utext="${errorMessage}"
-     style="color:red;font-style:italic;">
-    ...
-</div>
+<!--<div th:if="${errorMessage}" th:utext="${errorMessage}"-->
+<!--     style="color:red;font-style:italic;">-->
+<!--    ...-->
+<!--</div>-->
 
 </body>
 </html>
